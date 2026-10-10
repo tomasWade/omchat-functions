@@ -281,13 +281,13 @@ The suffixes attached to the tool's parameters define their characteristics:
 - `+`: Marks the property as required, with the value also needing to be an array.
 - No suffix: Denotes that the property is optional.
 
-### Use aichat
+### Use omchat
 
 AI is smart enough to automatically create tool scripts for us. We just need to provide the documentation and describe the requirements well.
 
-Use aichat to create a common tool script:
+Use omchat to create a common tool script:
 ```
-aichat -f docs/tool.md <<-'EOF'
+omchat -f docs/tool.md <<-'EOF'
 create tools/get_youtube_transcript.py
 
 description: Extract transcripts from YouTube videos
@@ -297,9 +297,9 @@ parameters:
 EOF
 ```
 
-Use aichat to create a agent tools script:
+Use omchat to create a agent tools script:
 ```
-aichat -f docs/agent.md -f docs/tool.md <<-'EOF'
+omchat -f docs/agent.md -f docs/tool.md <<-'EOF'
 
 create a spotify agent
 

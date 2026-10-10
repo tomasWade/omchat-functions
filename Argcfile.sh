@@ -552,11 +552,12 @@ link-code-interpreter() {
     _link_tool $1 code_interpreter
 }
 
-# @cmd Link this repo to aichat functions_dir
-link-to-aichat() {
-    functions_dir="$(aichat --info | grep -w functions_dir | awk '{$1=""; print substr($0,2)}')"
+# @cmd Link this repo to omchat functions_dir
+# @alias link-to-aichat
+link-to-omchat() {
+    functions_dir="$(omchat --info | grep -w functions_dir | awk '{$1=""; print substr($0,2)}')"
     if [[ -z "$functions_dir" ]]; then
-        _die "error: your aichat version don't support function calling"
+        _die "error: your omchat version don't support function calling"
     fi
     if [[ ! -e "$functions_dir" ]]; then
         if _is_win; then
@@ -587,8 +588,8 @@ create@tool() {
 # @cmd Displays version information for required tools
 version() {
     uname -a
-    if command -v aichat &> /dev/null; then
-        aichat --version
+    if command -v omchat &> /dev/null; then
+        omchat --version
     fi
     argc --argc-version
     jq --version

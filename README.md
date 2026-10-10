@@ -83,31 +83,31 @@ argc build
 argc check
 ```
 
-### 3. Link LLM-functions and AIChat
+### 3. Link LLM-functions and Omchat
 
-AIChat expects LLM-functions to be placed in AIChat's **functions_dir** so that AIChat can use the tools and agents that LLM-functions provides.
+Omchat expects LLM-functions to be placed in Omchat's **functions_dir** so that Omchat can use the tools and agents that LLM-functions provides.
 
-You can symlink this repository directory to AIChat's **functions_dir** with:
+You can symlink this repository directory to Omchat's **functions_dir** with:
 
 ```sh
-ln -s "$(pwd)" "$(aichat --info | sed -n 's/^functions_dir\s\+//p')"
+ln -s "$(pwd)" "$(omchat --info | sed -n 's/^functions_dir\s\+//p')"
 # OR
-argc link-to-aichat
+argc link-to-omchat
 ```
 
-Alternatively, you can tell AIChat where the LLM-functions directory is by using an environment variable:
+Alternatively, you can tell Omchat where the LLM-functions directory is by using an environment variable:
 
 ```sh
-export AICHAT_FUNCTIONS_DIR="$(pwd)"
+export OMCHAT_FUNCTIONS_DIR="$(pwd)"
 ```
 
 ### 4. Start using the functions
 
-Done! Now you can use the tools and agents with AIChat.
+Done! Now you can use the tools and agents with Omchat.
 
 ```sh
-aichat --role %functions% what is the weather in Paris?
-aichat --agent todo list all my todos
+omchat --role %functions% what is the weather in Paris?
+omchat --agent todo list all my todos
 ```
 
 ## Writing Your Own Tools

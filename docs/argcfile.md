@@ -70,8 +70,8 @@ argc link-web-search web_search_tavily.sh
 argc link-code-interpreter execute_py_code.py 
 
 # -------- Misc --------
-# Link this repo to aichat functions_dir 
-argc link-to-aichat                      
+# Link this repo to omchat functions_dir 
+argc link-to-omchat                      
 # Displays version information for required tools
 argc version
 ```
